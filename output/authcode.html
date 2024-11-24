@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>iRacingBot</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <style>
+            html {
+                background-color: black;
+                color: white;
+                text-align: center;
+                font-size: xx-large;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h1>iRacingBot</h1>
+        <span id="code"></span>
+    </body>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get('code');
+        if(!code){
+            document.getElementById('code').innerHTML="There was an issue, close this window and try again."
+            document.getElementById('code').style.color = "red"
+        } else {
+            document.getElementById('code').innerHTML="Twitch has been authorized, you can close this window."
+            document.getElementById('code').style.color = "green"
+        }
+    </script>
+</html>
